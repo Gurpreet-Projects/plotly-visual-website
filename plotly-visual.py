@@ -14,9 +14,9 @@ import chart_studio
 import chart_studio.plotly as py
 
 #%%
-# username='deolgurpreet'
-# api_key='SlRW3lS2KG9slmE0XOMm'
-# chart_studio.tools.get_credentials_file(username=username,api_key=api_key)
+username='deolgurpreet'
+api_key='SlRW3lS2KG9slmE0XOMm'
+chart_studio.tools.get_credentials_file(username,api_key)
 
 #%%
 py.plot(fig,filename='gdp_per_cap', auto_open=True)

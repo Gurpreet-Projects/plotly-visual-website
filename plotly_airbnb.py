@@ -44,4 +44,22 @@ fig.update_layout(template='plotly_white')
 fig.update_layout(title='How much should you charge in a Berlin neighborhood?')
 fig.show()
 
-pio.write_html(fig, file='index.html', auto_open=True)
+
+import chart_studio
+import chart_studio.plotly as py
+
+try:
+    username='deolgurpreet'
+    api_key='SlRW3lS2KG9slmE0XOMm'
+
+    chart_studio.tools.get_credentials_file(username,api_key)
+except chart_studio.exceptions.PlotlyRequestError as e:
+    print('ERROR: ',e)
+py.plot(fig, filename='data/airbnb.csv', auto_open=True)
+
+
+#%%
+# import chart_studio.tools as tls
+# tls.get_embed('https://chart-studio.plot.ly/~deolgurpreet/9/') #change to your url
+#
+# pio.write_html(fig, file='index.html', auto_open=True)
